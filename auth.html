@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample FirebaseUI App</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <script>
+      // !!!! Replace with your own Firebase settings  !!!!!
+      var config = {
+        apiKey: "!! Replace with your own Firebase settings !!",
+        authDomain: "!! Replace with your own Firebase settings !!",
+        databaseURL: "!! Replace with your own Firebase settings !!",
+        storageBucket: "!! Replace with your own Firebase settings !!",
+      };
+      firebase.initializeApp(config);
+    </script>
+    
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        'signInSuccessUrl': '/index.html#!/enterbeer',
+        'signInOptions': [
+          // Leave the lines as is for the providers you want to offer your users.
+          //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        'tosUrl': 'tos.html',
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+    <style>
+      .auth-wrapper {
+         width:350px;
+         margin-left: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+    <div class="auth-wrapper">
+      <h1>Sign in to your beer list</h1>
+      <div id="firebaseui-auth-container"></div>
+    </div>
+  </body>
+</html>
