@@ -1,5 +1,7 @@
 # Vue.js / Firebase boilerplate with authentication
 
+> Demo: http://firebase.zerostatic.com/
+
 This projects uses the Vue-cli build tool. Read about it here: https://github.com/vuejs/vue-cli <br/>
 Also using FirebaseUI for Web — Auth: https://github.com/firebase/FirebaseUI-Web <br/>
 In your Firebase console, in the auth section, add the desired login sign-in providers. more info: https://firebase.google.com/docs/auth/ <br/>
