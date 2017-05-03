@@ -3,7 +3,7 @@
   <div class="enter-beer">
     <div class="">
     <h2>Enter a beer:</h2>
-    
+
       <input class="form-control" type="text" v-model="brewery" placeholder="Brewery"><br/>
     <input class="form-control" type="text" v-model="beerName" placeholder="beerName"><br/>
     <h4 class="star-title">Rating:</h4>
@@ -15,12 +15,12 @@
     <img class="star-img" :src="imagePath5" v-on:click="rate(4)" alt="">
     </div><br/>
     <button  class="btn btn-default submit-btn" v-on:click="submit()">Submit</button>
-     </div>  
+     </div>
   </div>
 </template>
 
 <script>
-// import firebase from 'firebase'
+import firebase from 'firebase'
 
 export default {
   props: ['logstatus'],
